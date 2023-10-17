@@ -1,6 +1,6 @@
 {
   "name": "whats-my-line",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "description": "Handy library for displaying GitHub comments within a text editor.",
   "main": "dist/index.js",
   "scripts": {
@@ -39,7 +39,7 @@
     "webpack-cli": "^3.1.2"
   },
   "dependencies": {
-    "dugite": "^1.86.0",
+    "dugite": "^2.1.0",
     "superstring": "^2.4.4",
     "what-the-diff": "^0.6.0"
   }
