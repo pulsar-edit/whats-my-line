@@ -1,7 +1,7 @@
 {
   "name": "whats-my-line",
   "version": "0.1.4",
-  "description": "",
+  "description": "Handy library for displaying GitHub comments within a text editor.",
   "main": "dist/index.js",
   "scripts": {
     "rebuild": "rm -rf **/dist **/types && npm install",
@@ -11,19 +11,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/kuychaco/whats-my-line"
+    "url": "https://github.com/pulsar-edit/whats-my-line"
   },
   "keywords": [
     "GitHub",
     "comment",
     "diff"
   ],
-  "author": "",
+  "author": "kuychaco",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/kuychaco/whats-my-line/issues"
+    "url": "https://github.com/pulsar-edit/whats-my-line/issues"
   },
-  "homepage": "https://github.com/kuychaco/whats-my-line",
+  "homepage": "https://github.com/pulsar-edit/whats-my-line",
   "devDependencies": {
     "@babel/core": "^7.4.3",
     "@babel/preset-env": "^7.4.3",
