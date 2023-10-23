@@ -1,8 +1,8 @@
 const { deepEqual } = require("assert");
-const { translateLinesGivenDiff, diffPositionToFilePosition } = require("../src/index.js");
+const { translateLinesGivenDiff, diffPositionToFilePosition, getDiff } = require("../src/index.js");
 const { readFileSync } = require("fs");
 
-const fixture = require('js-yaml').safeLoad(readFileSync(require.resolve('./index.fixture.yaml')))
+const fixture = require('js-yaml').safeLoad(readFileSync(require.resolve('./fixtures/index.fixture.yaml')))
 
 describe('translateLinesGivenDiff', () => {
   it('translates rows after applying a diff', () => {
@@ -64,3 +64,13 @@ describe('diffPositionToFilePosition', () => {
     })
   })
 })
+
+describe('getDiff', () => {
+  it('returns accurate getDiff', async () => {
+    // Use this repo's git info, checking the 'package.json' file at a known commit
+    // https://github.com/pulsar-edit/whats-my-line/commit/71feedf0649bc342c9838d4f139043aa204dbead
+    const diff = await getDiff('./', 'package.json', '71feedf0649bc342c9838d4f139043aa204dbead');
+    const diffFixture = readFileSync(require.resolve('./fixtures/getDiff.fixture.txt'), "utf8");
+    deepEqual(diff, diffFixture);
+  });
+});
