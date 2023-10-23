@@ -1,8 +1,8 @@
-import { deepEqual } from 'assert'
-import { translateLinesGivenDiff, diffPositionToFilePosition } from '../src/index'
+const { deepEqual } = require("assert");
+const { translateLinesGivenDiff, diffPositionToFilePosition, getDiff } = require("../src/index.js");
+const { readFileSync } = require("fs");
 
-import { readFileSync } from 'fs'
-const fixture = require('js-yaml').safeLoad(readFileSync(require.resolve('./index.fixture.yaml')))
+const fixture = require('js-yaml').safeLoad(readFileSync(require.resolve('./fixtures/index.fixture.yaml')))
 
 describe('translateLinesGivenDiff', () => {
   it('translates rows after applying a diff', () => {
@@ -64,3 +64,12 @@ describe('diffPositionToFilePosition', () => {
     })
   })
 })
+
+describe('getDiff', () => {
+  it('returns accurate getDiff', async () => {
+    // Use this repo's git info, checking the artifact fixture file
+    const diff = await getDiff('./', 'test/fixtures/getDiff.artifact.fixture.txt', '286ccffe38885e731ed4894989dbc6d2c0f85f72');
+    const diffFixture = readFileSync(require.resolve('./fixtures/getDiff.fixture.txt'), "utf8");
+    deepEqual(diff, diffFixture);
+  });
+});
