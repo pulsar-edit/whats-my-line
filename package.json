@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "dugite": "^2.1.0",
-    "superstring": "^2.4.4",
+    "superstring": "https://github.com/pulsar-edit/superstring#eb0cc0990017dc7aa4a7322ab0f65021765886d3",
     "what-the-diff": "^0.6.0"
   }
 }
