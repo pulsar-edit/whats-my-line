@@ -1,7 +1,7 @@
-import { deepEqual } from 'assert'
-import { translateLinesGivenDiff, diffPositionToFilePosition } from '../src/index'
+const { deepEqual } = require("assert");
+const { translateLinesGivenDiff, diffPositionToFilePosition } = require("../src/index.js");
+const { readFileSync } = require("fs");
 
-import { readFileSync } from 'fs'
 const fixture = require('js-yaml').safeLoad(readFileSync(require.resolve('./index.fixture.yaml')))
 
 describe('translateLinesGivenDiff', () => {

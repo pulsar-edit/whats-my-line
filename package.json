@@ -2,12 +2,9 @@
   "name": "whats-my-line",
   "version": "0.1.4",
   "description": "Handy library for displaying GitHub comments within a text editor.",
-  "main": "dist/index.js",
+  "main": "src/index.js",
   "scripts": {
-    "rebuild": "rm -rf **/dist **/types && npm install",
-    "test": "ts-mocha test/**/*.test.ts",
-    "build": "tsc -p ./tsconfig.json",
-    "prepare": "npm run build"
+    "test": "mocha test/*.test.js"
   },
   "repository": {
     "type": "git",
@@ -25,18 +22,8 @@
   },
   "homepage": "https://github.com/pulsar-edit/whats-my-line",
   "devDependencies": {
-    "@babel/core": "^7.4.3",
-    "@babel/preset-env": "^7.4.3",
-    "@types/mocha": "^5.2.6",
-    "@types/node": "^11.13.0",
-    "babel-loader": "^8.0.5",
     "js-yaml": "^3.12.2",
-    "mocha": "^6.0.2",
-    "ts-loader": "^5.3.3",
-    "ts-mocha": "^6.0.0",
-    "typescript": "^3.4.1",
-    "webpack": "^4.41.2",
-    "webpack-cli": "^3.1.2"
+    "mocha": "^6.0.2"
   },
   "dependencies": {
     "dugite": "^1.86.0",

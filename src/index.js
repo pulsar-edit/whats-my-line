@@ -1,13 +1,18 @@
-import {parse} from 'what-the-diff'
-import {MarkerIndex} from 'superstring'
-import { GitProcess } from 'dugite'
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+// While a little strange, this is done to match the `dist` output of when converted from TypeScript
 
-export default async function translateLines(lines, repositoryPath, fileName, commitSha) {
+const { parse } = require("what-the-diff");
+const { MarkerIndex } = require("superstring");
+const { GitProcess } = require("dugite");
+
+async function translateLines(lines, repositoryPath, fileName, commitSha) {
   const diff = await getDiff(repositoryPath, fileName, commitSha)
   return translateLinesGivenDiff(lines, diff)
 }
+exports.default = translateLines;
 
-export async function getDiff(respositoryPath, fileName, commitSha) {
+async function getDiff(respositoryPath, fileName, commitSha) {
   const result = await GitProcess.exec([ 'diff', commitSha, '--', fileName], respositoryPath)
   if (result.exitCode === 0) {
     return result.stdout
@@ -15,14 +20,14 @@ export async function getDiff(respositoryPath, fileName, commitSha) {
     throw new Error(result.stderr)
   }
 }
+exports.getDiff = getDiff;
+
+const isCtx = (line) => line[0] === ' '
+const isAdd = (line) => line[0] === '+'
+const isDel = (line) => line[0] === '-'
 
 
-const isCtx = (line: string) => line[0] === ' '
-const isAdd = (line: string) => line[0] === '+'
-const isDel = (line: string) => line[0] === '-'
-
-
-export function translateLinesGivenDiff(lines: number[], diffInput) {
+function translateLinesGivenDiff(lines, diffInput) {
   let diff
   if (diffInput.constructor === String) {
     diff = parse(diffInput)[0]
@@ -79,8 +84,9 @@ export function translateLinesGivenDiff(lines: number[], diffInput) {
 
   return translations
 }
+exports.translateLinesGivenDiff = translateLinesGivenDiff;
 
-export function diffPositionToFilePosition(positions: number[], diffInput) {
+function diffPositionToFilePosition(positions, diffInput) {
   let diff
   if (diffInput.constructor === String) {
     diff = parse(diffInput)[0]
@@ -121,3 +127,4 @@ export function diffPositionToFilePosition(positions: number[], diffInput) {
 
   return diffToFilePosition
 }
+exports.diffPositionToFilePosition = diffPositionToFilePosition;
