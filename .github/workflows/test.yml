@@ -12,6 +12,9 @@ jobs:
     steps:
     - name: Checkout the latest code
       uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+        # Make sure we get all commits, since testing uses the local git info
     - name: Setup Node
       uses: actions/setup-node@v3
       with:
