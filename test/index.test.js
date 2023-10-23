@@ -67,9 +67,8 @@ describe('diffPositionToFilePosition', () => {
 
 describe('getDiff', () => {
   it('returns accurate getDiff', async () => {
-    // Use this repo's git info, checking the 'package.json' file at a known commit
-    // https://github.com/pulsar-edit/whats-my-line/commit/71feedf0649bc342c9838d4f139043aa204dbead
-    const diff = await getDiff('./', 'package.json', '71feedf0649bc342c9838d4f139043aa204dbead');
+    // Use this repo's git info, checking the artifact fixture file
+    const diff = await getDiff('./', 'test/fixtures/getDiff.artifact.fixture.txt', '286ccffe38885e731ed4894989dbc6d2c0f85f72');
     const diffFixture = readFileSync(require.resolve('./fixtures/getDiff.fixture.txt'), "utf8");
     deepEqual(diff, diffFixture);
   });

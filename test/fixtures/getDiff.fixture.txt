@@ -1,55 +1,7 @@
-diff --git a/package.json b/package.json
-index 4e5b84c..e0f922b 100644
---- a/package.json
-+++ b/package.json
-@@ -1,42 +1,29 @@
- {
-   "name": "whats-my-line",
-   "version": "0.1.4",
--  "description": "",
--  "main": "dist/index.js",
-+  "description": "Handy library for displaying GitHub comments within a text editor.",
-+  "main": "src/index.js",
-   "scripts": {
--    "rebuild": "rm -rf **/dist **/types && npm install",
--    "test": "ts-mocha test/**/*.test.ts",
--    "build": "tsc -p ./tsconfig.json",
--    "prepare": "npm run build"
-+    "test": "mocha test/*.test.js"
-   },
-   "repository": {
-     "type": "git",
--    "url": "https://github.com/kuychaco/whats-my-line"
-+    "url": "https://github.com/pulsar-edit/whats-my-line"
-   },
-   "keywords": [
-     "GitHub",
-     "comment",
-     "diff"
-   ],
--  "author": "",
-+  "author": "kuychaco",
-   "license": "ISC",
-   "bugs": {
--    "url": "https://github.com/kuychaco/whats-my-line/issues"
-+    "url": "https://github.com/pulsar-edit/whats-my-line/issues"
-   },
--  "homepage": "https://github.com/kuychaco/whats-my-line",
-+  "homepage": "https://github.com/pulsar-edit/whats-my-line",
-   "devDependencies": {
--    "@babel/core": "^7.4.3",
--    "@babel/preset-env": "^7.4.3",
--    "@types/mocha": "^5.2.6",
--    "@types/node": "^11.13.0",
--    "babel-loader": "^8.0.5",
-     "js-yaml": "^3.12.2",
--    "mocha": "^6.0.2",
--    "ts-loader": "^5.3.3",
--    "ts-mocha": "^6.0.0",
--    "typescript": "^3.4.1",
--    "webpack": "^4.41.2",
--    "webpack-cli": "^3.1.2"
-+    "mocha": "^6.0.2"
-   },
-   "dependencies": {
-     "dugite": "^1.86.0",
+diff --git a/test/fixtures/getDiff.artifact.fixture.txt b/test/fixtures/getDiff.artifact.fixture.txt
+index 6b08561..88e9a2c 100644
+--- a/test/fixtures/getDiff.artifact.fixture.txt
++++ b/test/fixtures/getDiff.artifact.fixture.txt
+@@ -1 +1 @@
+-Never Change this File
++DO NOT CHANGE THIS FILE
