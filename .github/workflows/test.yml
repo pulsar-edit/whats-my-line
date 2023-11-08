@@ -29,10 +29,6 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-    - name: Globally install node-gyp for Yarn
-      # Workaround for a weird Yarn v1.x issue,
-      # which only happens when global npm is v9.7.2 or newer.
-      run: yarn global add node-gyp@9.4.0
     - name: Install Dependencies with Yarn
       run: yarn install
     - name: Run Tests
