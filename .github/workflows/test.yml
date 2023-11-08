@@ -20,6 +20,11 @@ jobs:
       with:
         fetch-depth: 0
         # Make sure we get all commits, since testing uses the local git info
+    - name: Install Python setuptools
+      # This is needed for Python 3.12+, since many versions of node-gyp
+      # are incompatible with Python 3.12+, which no-longer ships 'distutils'
+      # out of the box. 'setuptools' package provides 'distutils'.
+      run: python3 -m pip install setuptools
     - name: Setup Node
       uses: actions/setup-node@v3
       with:
