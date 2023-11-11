@@ -26,7 +26,7 @@
     "mocha": "^6.0.2"
   },
   "dependencies": {
-    "dugite": "^2.1.0",
+    "dugite": "2.1.0",
     "superstring": "https://github.com/pulsar-edit/superstring/archive/c2ff062317362363eae7d392cd78aef4fcc8b9f8.tar.gz",
     "what-the-diff": "^0.6.0"
   }
