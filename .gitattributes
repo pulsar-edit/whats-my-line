@@ -1,2 +1,0 @@
-# Normalize Unix-style line endings in fixture files
-/test/fixtures/*.txt	text eol=lf
