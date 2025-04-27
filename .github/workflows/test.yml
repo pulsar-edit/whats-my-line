@@ -22,7 +22,7 @@ jobs:
         # Make sure we get all commits, since testing uses the local git info
     - name: Override pip warning
       if: runner.os == 'macOS'
-      run: echo "break-system-packages = true" > ~/.pip/pip.conf
+      run: mkdir -p ~/.pip && echo "break-system-packages = true" > ~/.pip/pip.conf
     - name: Install Python setuptools
       # This is needed for Python 3.12+, since many versions of node-gyp
       # are incompatible with Python 3.12+, which no-longer ships 'distutils'
