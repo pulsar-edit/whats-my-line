@@ -17,6 +17,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
+      # This is needed for Python 3.12+, since many versions of node-gyp
+      # are incompatible with Python 3.12+, which no-longer ships 'distutils'
+      # out of the box. 'setuptools' package provides 'distutils'.
+      - run: python3 -m pip install --break-system-packages setuptools
       - run: npm ci
       - run: npm test
 
