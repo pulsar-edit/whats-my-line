@@ -2,3 +2,5 @@ src
 test
 img
 tsconfig.json
+.tool-versions
+.github
