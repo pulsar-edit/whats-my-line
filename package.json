@@ -1,6 +1,6 @@
 {
   "name": "whats-my-line",
-  "version": "0.2.0",
+  "version": "0.1.5",
   "description": "Handy library for displaying GitHub comments within a text editor.",
   "main": "src/index.js",
   "scripts": {
