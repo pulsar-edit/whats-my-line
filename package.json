@@ -1,6 +1,6 @@
 {
   "name": "@pulsar-edit/whats-my-line",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "description": "Handy library for displaying GitHub comments within a text editor.",
   "main": "src/index.js",
   "scripts": {
