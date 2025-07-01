@@ -13,7 +13,7 @@ jobs:
         node-version: [ 16 ]
       fail-fast: false
     name: Test
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
     steps:
     - name: Install dependencies
       if: runner.os == 'macOS'
@@ -31,7 +31,7 @@ jobs:
     - name: Setup Node
       uses: actions/setup-node@v3
       with:
-        node-version: 16
+        node-version: ${{ matrix.version }}
     - name: Install Dependencies
       run: npm install
     - name: Run Tests
