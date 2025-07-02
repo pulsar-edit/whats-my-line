@@ -72,7 +72,7 @@ describe('getDiff', () => {
     const diffFixture = readFileSync(require.resolve('./fixtures/getDiff.fixture.txt'), "utf8");
     deepEqual(
       diff.toString().replace(/\r/g, ''),
-      diffFixture
+      diffFixture.toString().replace(/\r/g, '')
     );
   });
 });
