@@ -68,7 +68,7 @@ describe('diffPositionToFilePosition', () => {
 describe('getDiff', () => {
   it('returns accurate getDiff', async () => {
     // Use this repo's git info, checking the artifact fixture file
-    const diff = await getDiff('./', 'test/fixtures/getDiff.artifact.fixture.txt', '286ccffe38885e731ed4894989dbc6d2c0f85f72');
+    const diff = await getDiff('./', 'test/fixtures/getDiff.artifact.fixture.txt', '286ccffe38885e731ed4894989dbc6d2c0f85f72').replace(/\r/g, '');
     const diffFixture = readFileSync(require.resolve('./fixtures/getDiff.fixture.txt'), "utf8");
     deepEqual(diff, diffFixture);
   });
