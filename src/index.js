@@ -1,9 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-// While a little strange, this is done to match the `dist` output of when converted from TypeScript.
+// While a little strange, this is done to match the `dist` output of when
+// converted from TypeScript.
 
 const { parse } = require("what-the-diff");
-const { MarkerIndex } = require("superstring");
+const { MarkerIndex } = require("@pulsar-edit/superstring");
 const { GitProcess } = require("dugite");
 
 async function translateLines(lines, repositoryPath, fileName, commitSha) {
