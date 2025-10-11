@@ -16,7 +16,7 @@
     "diff"
   ],
   "engines": {
-    "node": ">=14 <=16"
+    "node": ">=18"
   },
   "author": "kuychaco",
   "license": "ISC",
@@ -29,8 +29,8 @@
     "mocha": "^6.0.2"
   },
   "dependencies": {
+    "@pulsar-edit/superstring": "^3.0.4",
     "dugite": "2.5.2",
-    "superstring": "github:pulsar-edit/superstring#de97b496663fce40050bf2d66e1466ccfbd00943",
     "what-the-diff": "^0.6.0"
   }
 }
